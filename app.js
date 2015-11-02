@@ -1,5 +1,13 @@
 var hours= ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 
+var totalPike = 0;
+var totalSea = 0;
+var totalSouth = 0;
+var totalBell = 0;
+var totalAlki = 0;
+var display = [];
+
+
 
 var pikePlace = {
   minCustHr: 17,
@@ -10,23 +18,23 @@ var pikePlace = {
   },
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
-  },
-  dailyTot: function() {
-    return this.HourlyTot() * 6;
-  },
+  }
 };
 
-var display = []
 for(var i = 0; i < hours.length; i++) {
-  display.push(hours[i] + " " + pikePlace.hourlyTot())
+  var totalThisHourPike = pikePlace.hourlyTot();
+  totalPike += totalThisHourPike;
+  display.push(hours[i] + ":" + " " + totalThisHourPike);
 };
 
 for(var i = 0; i < display.length; i++) {
   var item = document.createElement("LI");
   var hourDis = document.createTextNode(display[i]);
   item.appendChild(hourDis);
-  document.getElementById("pikeList"). appendChild(item);
+  document.getElementById("pikeList").appendChild(item);
 };
+document.getElementById("pikeTotal").innerHTML = totalPike;
+
 
 
 
@@ -41,14 +49,13 @@ var seaTac = {
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
-  dailyTot: function() {
-    return this.calcHourlyTot() * 6;
-  },
 }
 
 var display = []
 for(var i = 0; i < hours.length; i++) {
-  display.push(hours[i] + " " + seaTac.hourlyTot())
+  var totalThisHourSea = seaTac.hourlyTot();
+  totalSea += totalThisHourSea;
+  display.push(hours[i] + ":" + " " + totalThisHourSea);
 };
 
 for(var i = 0; i < display.length; i++) {
@@ -57,6 +64,13 @@ for(var i = 0; i < display.length; i++) {
   item.appendChild(hourDis);
   document.getElementById("seaList"). appendChild(item);
 };
+document.getElementById("seaTotal").innerHTML = totalSea;
+
+
+
+
+
+
 
 var southCenter = {
   minCustHr: 11,
@@ -68,14 +82,13 @@ var southCenter = {
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
-  dailyTot: function() {
-    return this.calcHourlyTot() * 6;
-  },
 }
 
 var display = []
 for(var i = 0; i < hours.length; i++) {
-  display.push(hours[i] + " " + southCenter.hourlyTot())
+  var totalThisHourSouth = southCenter.hourlyTot();
+  totalSouth += totalThisHourSouth;
+  display.push(hours[i] + ":" + " " + totalThisHourSouth);
 };
 
 for(var i = 0; i < display.length; i++) {
@@ -84,6 +97,9 @@ for(var i = 0; i < display.length; i++) {
   item.appendChild(hourDis);
   document.getElementById("southCenterList"). appendChild(item);
 };
+document.getElementById("southCenterTotal").innerHTML = totalSouth;
+
+
 
 
 
@@ -97,14 +113,13 @@ var bellevue = {
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
-  dailyTot: function() {
-    return this.calcHourlyTot() * 6;
-  },
 }
 
 var display = []
 for(var i = 0; i < hours.length; i++) {
-  display.push(hours[i] + " " + bellevue.hourlyTot())
+  var totalThisHourBell = bellevue.hourlyTot();
+  totalBell += totalThisHourBell;
+  display.push(hours[i] + ":" + " " + totalThisHourBell);
 };
 
 for(var i = 0; i < display.length; i++) {
@@ -113,6 +128,11 @@ for(var i = 0; i < display.length; i++) {
   item.appendChild(hourDis);
   document.getElementById("bellevueList"). appendChild(item);
 };
+document.getElementById("bellevueTotal").innerHTML = totalBell;
+
+
+
+
 
 var alki = {
   minCustHr: 3,
@@ -124,14 +144,13 @@ var alki = {
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
-  dailyTot: function() {
-    return this.calcHourlyTot() * 6;
-  },
 }
 
 var display = []
 for(var i = 0; i < hours.length; i++) {
-  display.push(hours[i] + " " + alki.hourlyTot())
+  var totalThisHourAlki = alki.hourlyTot();
+  totalAlki += totalThisHourAlki;
+  display.push(hours[i] + ":" + " " + totalThisHourAlki);
 };
 
 for(var i = 0; i < display.length; i++) {
@@ -140,3 +159,4 @@ for(var i = 0; i < display.length; i++) {
   item.appendChild(hourDis);
   document.getElementById("alkiList"). appendChild(item);
 };
+document.getElementById("alkiTotal").innerHTML = totalAlki;
