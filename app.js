@@ -29,13 +29,21 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust, idName, to
 
   this.DisplayHours = function () {
     this.HourLog();
+    var trEl = document.createElement('tr');
+    var thEl = document.createElement('th');
+    thEl.textContent = this.storeLocation;
+    trEl.appendChild(thEl);
       for(var i = 0; i < this.display.length; i++) {
-        var item = document.createElement("LI");
+        var tdEl = document.createElement("td");
         var hourDis = document.createTextNode(this.display[i]);
-        item.appendChild(hourDis);
-        document.getElementById(this.idName).appendChild(item);
+        tdEl.appendChild(hourDis);
+        trEl.appendChild(tdEl);
       };
-    document.getElementById(this.totalId).innerHTML = this.total;
+    var totalNumber = document.createTextNode(this.total);
+    var totalTh = document.createElement('th');
+    totalTh.appendChild(totalNumber);
+    trEl.appendChild(totalTh);
+    tbl.appendChild(trEl);
     };
 }
 
@@ -45,8 +53,26 @@ var southCenter = new cookieStore("Southcenter Mall", 11, 38, 1.9, "southCenterL
 var bellevue = new cookieStore("Bellevue Square", 20, 48, 3.3, "bellevueList", "bellevueTotal");
 var alki = new cookieStore("Alki", 3, 24, 2.6, "alkiList", "alkiTotal");
 
+var tbl = document.createElement("table");
+
+var topRow = function () {
+    var topEl = document.createElement('tr');
+      for(var i = 0; i < pikePlace.display.length; i++) {
+        var topTdEl = document.createElement("td");
+        var topHourDis = document.createTextNode(hours[i]);
+        topTdEl.appendChild(topHourDis);
+        topEl.appendChild(topTdEl);
+      };
+    // document.getElementById(this.totalId).innerHTML = this.total;
+    tbl.appendChild(topEl);
+};
+
+
+topRow();
 pikePlace.DisplayHours();
 seaTac.DisplayHours();
 southCenter.DisplayHours();
 bellevue.DisplayHours();
 alki.DisplayHours();
+
+document.getElementById("tblDisplay").appendChild(tbl);
