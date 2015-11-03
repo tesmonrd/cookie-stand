@@ -21,7 +21,7 @@ var pikePlace = {
 
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
-  }
+  },
 };
 
 for(var i = 0; i < hours.length; i++) {
