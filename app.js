@@ -10,12 +10,15 @@ var display = [];
 
 
 var pikePlace = {
+  storeLocation: "Pike Place",
   minCustHr: 17,
   maxCustHr: 88,
   avePerCust: 5.2,
+
   calcRand: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
   },
+
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   }
@@ -40,12 +43,15 @@ document.getElementById("pikeTotal").innerHTML = totalPike;
 
 
 var seaTac = {
+  storeLocation: "SeaTac Airport",
   minCustHr: 6,
   maxCustHr: 44,
   avePerCust: 1.2,
+
   calcRand: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
   },
+
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
@@ -70,15 +76,16 @@ document.getElementById("seaTotal").innerHTML = totalSea;
 
 
 
-
-
 var southCenter = {
+  storeLocation: "Southcenter Mall",
   minCustHr: 11,
   maxCustHr: 38,
   avePerCust: 1.9,
+
   calcRand: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
   },
+
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
@@ -104,12 +111,15 @@ document.getElementById("southCenterTotal").innerHTML = totalSouth;
 
 
 var bellevue = {
+  storeLocation: "Bellevue Square",
   minCustHr: 20,
   maxCustHr: 48,
   avePerCust: 3.3,
+
   calcRand: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
   },
+
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
@@ -135,12 +145,15 @@ document.getElementById("bellevueTotal").innerHTML = totalBell;
 
 
 var alki = {
+  storeLocation: "Alki",
   minCustHr: 3,
   maxCustHr: 24,
   avePerCust: 2.6,
+
   calcRand: function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
   },
+
   hourlyTot: function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
   },
