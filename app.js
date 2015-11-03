@@ -24,6 +24,7 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust, idName, to
       var totalThisHour = this.hourlyTot();
       this.total += totalThisHour;
       this.display.push(hours[i] + ":" + " " + totalThisHour);
+      console.log(totalThisHour);
     };
   };
 
@@ -39,10 +40,10 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust, idName, to
         tdEl.appendChild(hourDis);
         trEl.appendChild(tdEl);
       };
-    var totalNumber = document.createTextNode(this.total);
-    var totalTh = document.createElement('th');
-    totalTh.appendChild(totalNumber);
-    trEl.appendChild(totalTh);
+    var totalNumber = document.createTextNode("Total: " + this.total);
+    var totalTd = document.createElement('td');
+    totalTd.appendChild(totalNumber);
+    trEl.appendChild(totalTd);
     tbl.appendChild(trEl);
     };
 }
@@ -63,7 +64,6 @@ var topRow = function () {
         topTdEl.appendChild(topHourDis);
         topEl.appendChild(topTdEl);
       };
-    // document.getElementById(this.totalId).innerHTML = this.total;
     tbl.appendChild(topEl);
 };
 
