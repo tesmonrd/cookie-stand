@@ -1,5 +1,5 @@
-var hours= ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
-var total= ["Total"];
+var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var locations = [];
 
 
 function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
@@ -9,6 +9,7 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
   this.avePerCust = avePerCust;
   this.total = 0;
   this.display = [];
+  locations.push(this);
 
   this.calcRand = function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
@@ -24,7 +25,7 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
       this.total += totalThisHour;
       this.display.push(totalThisHour);
       console.log(totalThisHour);
-    };
+    }
   };
 
   this.DisplayHours = function () {
@@ -38,14 +39,14 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
         var hourDis = document.createTextNode(this.display[i]);
         tdEl.appendChild(hourDis);
         trEl.appendChild(tdEl);
-      };
+      }
   var totalNumber = document.createTextNode(this.total);
   var totalTd = document.createElement('td');
   totalTd.appendChild(totalNumber);
   trEl.appendChild(totalTd);
   tbl.appendChild(trEl);
-  };
-}
+  }
+};
 
 var pikePlace = new cookieStore("Pike Place Market", 17, 88, 5.2);
 var seaTac = new cookieStore("SeaTac Airport", 6, 44, 1.2);
@@ -72,12 +73,17 @@ var topRow = function () {
     tbl.appendChild(topEl);
 };
 
+function displayAllLocations() {
+  for (var i = 0; i < locations.length; i++) {
+    locations[i].DisplayHours();
+  };
+}
 
+// function updateLocations() {
+//   add updates ex. pikePlace.avePerCust = 0
+//   displayAllLocations();
+// }
+
+displayAllLocations();
 topRow();
-pikePlace.DisplayHours();
-seaTac.DisplayHours();
-southCenter.DisplayHours();
-bellevue.DisplayHours();
-alki.DisplayHours();
-
 document.getElementById("tblDisplay").appendChild(tbl);
