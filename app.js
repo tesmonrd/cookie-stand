@@ -84,7 +84,7 @@ var handleLocationSubmit = function(event) {
   event.preventDefault();
 
   if(!event.target.storeLocation.value || !event.target.minCustHr.value || !event.target.maxCustHr.value || !event.target.avePerCust.value) {
-    return alert('Value cannot be empty');
+    return alert('Please fill out all fields');
   }
   var newLoc = event.target.storeLocation.value;
   var newMin = event.target.minCustHr.value;
@@ -93,24 +93,19 @@ var handleLocationSubmit = function(event) {
 
   var newStore = new cookieStore(newLoc, newMin, newMax, newAve);
 
-  console.log('New store: ' + event.target.storeLocation.value + " " + event.target.minCustHr.value + " " + event.target.maxCustHr.value + " " + event.target.avePerCust.value);
+  console.log('New store: ' + event.target.storeLocation.value + " min: " + event.target.minCustHr.value + " max " + event.target.maxCustHr.value + " ave: " + event.target.avePerCust.value);
 
     event.target.storeLocation.value = null;
     event.target.minCustHr.value = null;
     event.target.maxCustHr.value = null;
     event.target.avePerCust.value = null;
-}
+
+  newStore.DisplayHours();
+};
+
 
 storeDetails.addEventListener('submit', handleLocationSubmit);
-
-
-
-
-
-// function updateLocations() {
-//   add updates ex. pikePlace.avePerCust = 0
-//   displayAllLocations();
-// }
+// +++++++++++++++++++++++++++++++++++++++++++++++
 
 displayAllLocations();
 topRow();
