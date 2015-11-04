@@ -79,6 +79,34 @@ function displayAllLocations() {
   };
 }
 
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+var handleLocationSubmit = function(event) {
+  event.preventDefault();
+
+  if(!event.target.storeLocation.value || !event.target.minCustHr.value || !event.target.maxCustHr.value || !event.target.avePerCust.value) {
+    return alert('Value cannot be empty');
+  }
+  var newLoc = event.target.storeLocation.value;
+  var newMin = event.target.minCustHr.value;
+  var newMax = event.target.maxCustHr.value;
+  var newAve = event.target.avePerCust.value;
+
+  var newStore = new cookieStore(newLoc, newMin, newMax, newAve);
+
+  console.log('New store: ' + event.target.storeLocation.value + " " + event.target.minCustHr.value + " " + event.target.maxCustHr.value + " " + event.target.avePerCust.value);
+
+    event.target.storeLocation.value = null;
+    event.target.minCustHr.value = null;
+    event.target.maxCustHr.value = null;
+    event.target.avePerCust.value = null;
+}
+
+storeDetails.addEventListener('submit', handleLocationSubmit);
+
+
+
+
+
 // function updateLocations() {
 //   add updates ex. pikePlace.avePerCust = 0
 //   displayAllLocations();
