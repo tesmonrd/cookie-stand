@@ -1,4 +1,5 @@
 var hours= ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
+var total= ["Total"];
 
 
 function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
@@ -38,12 +39,12 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
         tdEl.appendChild(hourDis);
         trEl.appendChild(tdEl);
       };
-    var totalNumber = document.createTextNode("Total: " + this.total);
-    var totalTd = document.createElement('td');
-    totalTd.appendChild(totalNumber);
-    trEl.appendChild(totalTd);
-    tbl.appendChild(trEl);
-    };
+  var totalNumber = document.createTextNode(this.total);
+  var totalTd = document.createElement('td');
+  totalTd.appendChild(totalNumber);
+  trEl.appendChild(totalTd);
+  tbl.appendChild(trEl);
+  };
 }
 
 var pikePlace = new cookieStore("Pike Place Market", 17, 88, 5.2);
@@ -63,6 +64,11 @@ var topRow = function () {
         topThEl.appendChild(topHourDis);
         topEl.appendChild(topThEl);
       };
+    tbl.appendChild(topEl);
+
+    var dailytotal = document.createElement('th');
+    dailytotal.textContent = "Total";
+    topEl.appendChild(dailytotal);
     tbl.appendChild(topEl);
 };
 
