@@ -86,4 +86,4 @@ function displayAllLocations() {
 
 displayAllLocations();
 topRow();
-document.getElementById("tblDisplay").appendChild(tbl);
+document.getElementById("tableDisplay").appendChild(tbl);
