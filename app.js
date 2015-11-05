@@ -2,7 +2,7 @@ var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var locations = [];
 
 
-function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
+function CookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
   this.storeLocation = storeLocation;
   this.minCustHr = minCustHr;
   this.maxCustHr = maxCustHr;
@@ -13,11 +13,11 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
 
   this.calcRand = function() {
     return Math.floor(Math.random() * (this.maxCustHr - this.minCustHr +1)) + this.minCustHr;
-  };
+  }
 
   this.hourlyTot = function() {
     return Math.ceil(this.calcRand() * this.avePerCust);
-  };
+  }
 
   this.HourLog = function () {
     for(var i = 0; i < hours.length; i++) {
@@ -26,7 +26,7 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
       this.display.push(totalThisHour);
       console.log(totalThisHour);
     }
-  };
+  }
 
   this.DisplayHours = function () {
     this.HourLog();
@@ -47,14 +47,6 @@ function cookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
   tbl.appendChild(trEl);
   }
 };
-
-var pikePlace = new cookieStore("Pike Place Market", 17, 88, 5.2);
-var seaTac = new cookieStore("SeaTac Airport", 6, 44, 1.2);
-var southCenter = new cookieStore("Southcenter Mall", 11, 38, 1.9);
-var bellevue = new cookieStore("Bellevue Square", 20, 48, 3.3);
-var alki = new cookieStore("Alki", 3, 24, 2.6);
-
-var tbl = document.createElement("table");
 
 var topRow = function () {
     var topEl = document.createElement('thead');
@@ -79,7 +71,6 @@ function displayAllLocations() {
   };
 }
 
-
 var handleLocationSubmit = function(event) {
   event.preventDefault();
 
@@ -91,20 +82,26 @@ var handleLocationSubmit = function(event) {
   var newMax = event.target.maxCustHr.value;
   var newAve = event.target.avePerCust.value;
 
-  var newStore = new cookieStore(newLoc, newMin, newMax, newAve);
+  var newStore = new CookieStore(newLoc, newMin, newMax, newAve);
 
   console.log('New store: ' + event.target.storeLocation.value + " min: " + event.target.minCustHr.value + " max " + event.target.maxCustHr.value + " ave: " + event.target.avePerCust.value);
 
-    event.target.storeLocation.value = null;
-    event.target.minCustHr.value = null;
-    event.target.maxCustHr.value = null;
-    event.target.avePerCust.value = null;
+  event.target.storeLocation.value = null;
+  event.target.minCustHr.value = null;
+  event.target.maxCustHr.value = null;
+  event.target.avePerCust.value = null;
 
   newStore.DisplayHours();
 };
 
-storeDetails.addEventListener('submit', handleLocationSubmit);
+var pikePlace = new CookieStore("Pike Place Market", 17, 88, 5.2);
+var seaTac = new CookieStore("SeaTac Airport", 6, 44, 1.2);
+var southCenter = new CookieStore("Southcenter Mall", 11, 38, 1.9);
+var bellevue = new CookieStore("Bellevue Square", 20, 48, 3.3);
+var alki = new CookieStore("Alki", 3, 24, 2.6);
+var tbl = document.createElement("table");
 
+storeDetails.addEventListener('submit', handleLocationSubmit);
 displayAllLocations();
 topRow();
 document.getElementById("tableDisplay").appendChild(tbl);
