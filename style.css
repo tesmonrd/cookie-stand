@@ -1,15 +1,17 @@
 /*Work on padding!!!!! and orient text*/
 /*fix background-text box issue; try and make more transparent. if not use background color below*/
 
-* {
+body {
   /*background-color: rgb(253, 253, 253);*/
   background-image: url(http://www.oceansbridge.com/paintings/artists/recently-added/december/arthur-b-frost/Arthur-B-Frost-xx-Fly-Fishing-xx-Private-Collection.jpg);
+
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-form {
+aside {
   display: block;
-  margin: 5%;
+  margin: 10%;
   background-color: white;
 }
 
@@ -19,20 +21,48 @@ form {
 header {
   background: rgb(223, 251, 132);
   font-family: 'Lobster', cursive;
-  font-weight: bold;
-  font-size: 40px;
   color: black;
   text-align: center;
+  border: 10px solid black;
+  width: 100%;
 }
 
+img {
+  margin-right: 20px;
+}
+#HeaderText {
+  font-size: 50px;
+}
+#HeaderSlogan {
+  font-size: 25px;
+}
 
+#content {
+  background: rgba(110, 206, 179, 0.8);
+  width:70%;
+  height:auto;
+  padding:20px,20px,20px,20px;
+  border: 5px double black;
+  margin: 3%;
+  margin-left: 8px;
+}
+#cookies {
+  padding:20px,20px,20px,20px;
+  text-align: left;
+}
+#testimony {
+  text-align: left;
+  font-size: 20px;
+}
 h2,h3 {
   font-family: 'Georgia', serif;
-  color: rgb(223, 251, 132);
+  text-align: center;
+  color: black;
 
 }
 p {
   font-family: 'Helvetica', sans-serif;
   background: white;
   color: black;
+  padding: 10px;
 }
