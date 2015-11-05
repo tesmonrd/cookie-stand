@@ -79,7 +79,7 @@ function displayAllLocations() {
   };
 }
 
-// ++++++++++++++++++++++++++++++++++++++++++++++++
+
 var handleLocationSubmit = function(event) {
   event.preventDefault();
 
@@ -103,9 +103,7 @@ var handleLocationSubmit = function(event) {
   newStore.DisplayHours();
 };
 
-
 storeDetails.addEventListener('submit', handleLocationSubmit);
-// +++++++++++++++++++++++++++++++++++++++++++++++
 
 displayAllLocations();
 topRow();

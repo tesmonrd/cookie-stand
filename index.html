@@ -3,6 +3,8 @@
 
   <head>
       <title></title>
+      <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+      <link rel="style.css" type="text/css"
 
   </head>
 
@@ -14,14 +16,14 @@
     <form id = "storeDetails">
       <fieldset>
         <legend>Store Details</legend>
-        <label>Location Name<br />
-        <input name="storeLocation" type="text" /></label><br />
-        <label>Minimum Customers Per Hour<br />
-        <input name="minCustHr" type="text" /></label><br />
-        <label>Maximum Customers Per Hour<br />
-        <input name="maxCustHr" type="text" /></label><br />
-         <label>Average Cookies Per Hour<br />
-        <input name="avePerCust" type="text" /></label><br />
+        <label for="storeLocation">Location Name:</label><br />
+        <input name="storeLocation" type="text" size="30" maxlength="50" /><br />
+        <label for="minCustHr">Minimum Customers Per Hour:</label><br />
+        <input name="minCustHr" type="text" size="30" maxlength="20" /><br />
+        <label for="maxCustHr">Maximum Customers Per Hour:</label><br />
+        <input name="maxCustHr" type="text" size="30" maxlength="20" /><br />
+        <label for="avePerCust">Average Cookies Per Hour:</label><br />
+        <input name="avePerCust" type="text" size="30" maxlength="20" /><br />
         <button id = "submit">Submit</button>
       </fieldset>
     </form>
