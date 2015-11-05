@@ -4,9 +4,14 @@
 body {
   /*background-color: rgb(253, 253, 253);*/
   background-image: url(http://www.oceansbridge.com/paintings/artists/recently-added/december/arthur-b-frost/Arthur-B-Frost-xx-Fly-Fishing-xx-Private-Collection.jpg);
-
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+h2,h3 {
+  font-family: 'Georgia', serif;
+  text-align: center;
+  color: black;
 }
 
 aside {
@@ -15,11 +20,8 @@ aside {
   background-color: white;
 }
 
-#tableDisplay {
-  content:white;
-}
 header {
-  background: rgb(223, 251, 132);
+  background: rgba(223, 251, 132, 0.9);
   font-family: 'Lobster', cursive;
   color: black;
   text-align: center;
@@ -52,13 +54,31 @@ img {
 }
 #testimony {
   text-align: left;
-  font-size: 20px;
+  font-size: 25px;
 }
-h2,h3 {
-  font-family: 'Georgia', serif;
-  text-align: center;
-  color: black;
 
+#testimony>img {
+  height: 150px;
+  width: auto;
+}
+
+#merch {
+  text-align: center;
+}
+
+#merch>p {
+  font-family: 'Helvetica', sans-serif;
+  background: white;
+  color: black;
+  margin: 0px;
+}
+
+#merch>ul, li {
+  font-family: 'Helvetica', sans-serif;
+  list-style-type: none;
+  background: white;
+  color: black;
+  margin: 0px;
 }
 p {
   font-family: 'Helvetica', sans-serif;
@@ -66,3 +86,4 @@ p {
   color: black;
   padding: 10px;
 }
+
