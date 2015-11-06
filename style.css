@@ -1,9 +1,6 @@
-/*Work on padding!!!!! and orient text*/
-/*fix background-text box issue; try and make more transparent. if not use background color below*/
-
+/*Large section formatting and style*/
 body {
-  /*background-color: rgb(253, 253, 253);*/
-  background-image: url(http://www.oceansbridge.com/paintings/artists/recently-added/december/arthur-b-frost/Arthur-B-Frost-xx-Fly-Fishing-xx-Private-Collection.jpg);
+  background-image: url(images/background.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -25,6 +22,36 @@ aside {
   border: 5px double black;
 }
 
+header {
+  background: rgba(223, 251, 132, 0.9);
+  font-family: 'Lobster', cursive;
+  color: black;
+  text-align: center;
+  border: 10px solid black;
+  width: 100%;
+}
+
+p {
+  font-family: 'Helvetica', sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 10px;
+}
+
+img {
+  margin-right: 20px;
+}
+
+/*Tags and classes*/
+
+#content {
+  background: rgba(110, 206, 179, 0.8);
+  width:70%;
+  height:auto;
+  padding:20px,20px,20px,20px;
+  border: 5px double black;
+  float: left;
+}
 
 #locations {
   background: rgba(110, 206, 179, 0);
@@ -36,33 +63,15 @@ aside {
   text-align: center;
 }
 
-header {
-  background: rgba(223, 251, 132, 0.9);
-  font-family: 'Lobster', cursive;
-  color: black;
-  text-align: center;
-  border: 10px solid black;
-  width: 100%;
-}
 
-img {
-  margin-right: 20px;
-}
 #HeaderText {
   font-size: 50px;
 }
+
 #HeaderSlogan {
   font-size: 25px;
 }
 
-#content {
-  background: rgba(110, 206, 179, 0.8);
-  width:70%;
-  height:auto;
-  padding:20px,20px,20px,20px;
-  border: 5px double black;
-  float: left;
-}
 #cookies {
   padding:20px,20px,20px,20px;
   text-align: left;
@@ -95,10 +104,151 @@ img {
   color: black;
   margin: 0px;
 }
-p {
-  font-family: 'Helvetica', sans-serif;
-  background: rgba(255, 255, 255, 0.8);
-  color: black;
-  padding: 10px;
+
+/*ANIMATION*/
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:700);
+
+.group {
+      text-align: center;
+      margin: 20px auto;
 }
+.group button {
+  margin-top: 10px;
+}
+
+button {
+  background: rgba(223, 251, 132, 0.8);
+  border: dashed black;
+  outline: none;
+  border-radius: 3px;
+  padding: 15px 70px;
+  color:black;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.41);
+  box-shadow: 0 3px 0 0 #383838;
+  border:3px solid transparent;
+  animation: pulse 1s linear infinite alternate;
+  -webkit-animation: pulse 1s linear infinite alternate;
+}
+.active,
+button:active{
+  background-image: linear-gradient(rgba(0,0,0,.1) 13%, transparent 13%,transparent);
+  box-shadow: 0 1px 0 0 #383838;
+  color: rgba(0, 0, 0,.45);
+  text-shadow: none;
+
+
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+button:focus,
+button:hover{
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+
+.MakeItRain:focus,
+.MakeItRain:hover{
+  background-color:#0097bd;
+}
+.MakeItRain{
+  background-color:#00bff0;
+  border-color: #00bff0;
+
+}
+@-webkit-keyframes pulse {
+  100% {
+    transform: translateY(6.9px);
+  }
+}
+
+@keyframes pulse {
+  100% {
+    transform: translateY(6.9px);
+  }
+}
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+
+
+.swing:hover
+{
+        -webkit-animation: swing 2s ease;
+        animation: swing 2s ease;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 4;
+}
+
 

@@ -1,6 +1,11 @@
 var hours = ["10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var locations = [];
-
+var pikePlace = new CookieStore("Pike Place Market", 17, 88, 5.2);
+var seaTac = new CookieStore("SeaTac Airport", 6, 44, 1.2);
+var southCenter = new CookieStore("Southcenter Mall", 11, 38, 1.9);
+var bellevue = new CookieStore("Bellevue Square", 20, 48, 3.3);
+var alki = new CookieStore("Alki", 3, 24, 2.6);
+var tbl = document.createElement("table");
 
 function CookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
   this.storeLocation = storeLocation;
@@ -94,12 +99,6 @@ var handleLocationSubmit = function(event) {
   newStore.DisplayHours();
 };
 
-var pikePlace = new CookieStore("Pike Place Market", 17, 88, 5.2);
-var seaTac = new CookieStore("SeaTac Airport", 6, 44, 1.2);
-var southCenter = new CookieStore("Southcenter Mall", 11, 38, 1.9);
-var bellevue = new CookieStore("Bellevue Square", 20, 48, 3.3);
-var alki = new CookieStore("Alki", 3, 24, 2.6);
-var tbl = document.createElement("table");
 
 storeDetails.addEventListener('submit', handleLocationSubmit);
 displayAllLocations();
