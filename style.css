@@ -2,9 +2,9 @@
 /*fix background-text box issue; try and make more transparent. if not use background color below*/
 
 body {
-  /*background-color: rgb(253, 253, 253);*/
   background-image: url(http://www.oceansbridge.com/paintings/artists/recently-added/december/arthur-b-frost/Arthur-B-Frost-xx-Fly-Fishing-xx-Private-Collection.jpg);
   background-repeat: no-repeat;
+  background-size:cover;
   background-attachment: fixed;
 }
 
