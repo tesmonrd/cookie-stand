@@ -1,29 +1,104 @@
 /*Work on padding!!!!! and orient text*/
 /*fix background-text box issue; try and make more transparent. if not use background color below*/
 
-* {
+body {
   /*background-color: rgb(253, 253, 253);*/
   background-image: url(http://www.oceansbridge.com/paintings/artists/recently-added/december/arthur-b-frost/Arthur-B-Frost-xx-Fly-Fishing-xx-Private-Collection.jpg);
-  background-repeat: scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-header {
-  background: rgb(223, 251, 132);
-  font-family: 'Lobster', cursive;
-  font-weight: bold;
-  font-size: 40px;
-  color: black;
-  vertical-align: center;
-}
-
 
 h2,h3 {
   font-family: 'Georgia', serif;
-  color: rgb(223, 251, 132);
-
+  text-align: center;
+  color: black;
 }
-p {
+
+aside {
+  background: rgba(110, 206, 179, 0.8);
+  width:20%;
+  vertical-align: right;
+  text-align: left;
+  height:auto;
+  padding:20px,20px,20px,20px;
+  float: right;
+  border: 5px double black;
+}
+
+
+#locations {
+  background: rgba(110, 206, 179, 0);
+  list-style-type: none;
+  font-style: bold;
+}
+
+#links {
+  text-align: center;
+}
+
+header {
+  background: rgba(223, 251, 132, 0.9);
+  font-family: 'Lobster', cursive;
+  color: black;
+  text-align: center;
+  border: 10px solid black;
+  width: 100%;
+}
+
+img {
+  margin-right: 20px;
+}
+#HeaderText {
+  font-size: 50px;
+}
+#HeaderSlogan {
+  font-size: 25px;
+}
+
+#content {
+  background: rgba(110, 206, 179, 0.8);
+  width:70%;
+  height:auto;
+  padding:20px,20px,20px,20px;
+  border: 5px double black;
+  float: left;
+}
+#cookies {
+  padding:20px,20px,20px,20px;
+  text-align: left;
+}
+#testimony {
+  text-align: left;
+  font-size: 25px;
+}
+
+#testimony>img {
+  height: 150px;
+  width: auto;
+}
+
+#merch {
+  text-align: center;
+}
+
+#merch>p {
   font-family: 'Helvetica', sans-serif;
   background: white;
   color: black;
+  margin: 0px;
 }
+
+#merch>ul {
+  font-family: 'Helvetica', sans-serif;
+  list-style-type: none;
+  background: white;
+  color: black;
+  margin: 0px;
+}
+p {
+  font-family: 'Helvetica', sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding: 10px;
+}
+
