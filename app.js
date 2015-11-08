@@ -51,7 +51,7 @@ function CookieStore(storeLocation, minCustHr, maxCustHr, avePerCust) {
   trEl.appendChild(totalTd);
   tbl.appendChild(trEl);
   }
-};
+}
 
 var topRow = function () {
     var topEl = document.createElement('thead');
@@ -68,7 +68,7 @@ var topRow = function () {
     dailytotal.textContent = "Total";
     topEl.appendChild(dailytotal);
     tbl.appendChild(topEl);
-};
+}
 
 function displayAllLocations() {
   for (var i = 0; i < locations.length; i++) {
@@ -97,7 +97,7 @@ var handleLocationSubmit = function(event) {
   event.target.avePerCust.value = null;
 
   newStore.DisplayHours();
-};
+}
 
 
 storeDetails.addEventListener('submit', handleLocationSubmit);
