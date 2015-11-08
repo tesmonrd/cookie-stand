@@ -42,6 +42,14 @@ img {
   margin-right: 20px;
 }
 
+ul {
+  list-style-type: none;
+  font-family: 'Helvetica', sans-serif;
+  background: rgba(255, 255, 255, 0.0);
+  color: black;
+  padding: 0px;
+}
+
 /*Tags and classes*/
 
 #content {
@@ -89,21 +97,14 @@ img {
 #merch {
   text-align: center;
 }
-
-#merch>p {
+.box p {
   font-family: 'Helvetica', sans-serif;
-  background: white;
+  background: rgba(110, 206, 179, 0);
   color: black;
-  margin: 0px;
+  padding: 0px;
+}
 }
 
-#merch>ul {
-  font-family: 'Helvetica', sans-serif;
-  list-style-type: none;
-  background: white;
-  color: black;
-  margin: 0px;
-}
 
 /*ANIMATION*/
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:700);
@@ -150,11 +151,11 @@ button:hover{
 }
 
 
-.MakeItRain:focus,
-.MakeItRain:hover{
+.salmonLove:focus,
+.salmonLove:hover{
   background-color:#0097bd;
 }
-.MakeItRain{
+.salmonLove{
   background-color:#00bff0;
   border-color: #00bff0;
 
@@ -170,7 +171,37 @@ button:hover{
     transform: translateY(6.9px);
   }
 }
+/*++++++++++++++++++++++++++++++++++++++*/
+.image {
+    padding:5px;
+    -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+/*++++++++++++++++++++++++++++++++++++++*/
 
+.fade
+{
+  opacity:0.3;
+}
+.fade:hover
+{
+  opacity:1;
+}
+
+/*+++++++++++++++++++++++++++++++++++++++*/
+.box {
+  background: rgba(110, 206, 179, 0.3);
+  transition-property: background;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+.box:hover {
+  background: rgba(255, 77, 6, 0.8);
+}
 /*+++++++++++++++++++++++++++++++++++++++*/
 
 
